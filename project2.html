@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width:1170px)" href="phone.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Bree Serif', serif;
+        }
+
+        :root {
+            --navbar-height: 59px;
+        }
+
+        #home h1 {
+            -webkit-text-stroke: 0.1vw rgb(217, 134, 26);
+            position: relative;
+            margin: 0;
+            font-size: 4em;
+            font-weight: 900;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        #home h1::before {
+            content: "";
+            position: absolute;
+            left: 110%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, #f66307 5%, #000000 100%);
+            animation: animate 5.5s linear forwards infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                left: -20%;
+            }
+
+            100% {
+                left: 110%;
+            }
+
+        }
+
+        #logo {
+            margin: 4px 20px;
+        }
+
+        #logo img {
+            margin: 4px 13px;
+            height: 74px;
+            width: 87px;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 0px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #navbar ul {
+            display: flex;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 2px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            align-items: center;
+            justify-content: center;
+            height: 420px;
+        }
+
+        #home::before {
+            content: "";
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/shelve.jpg') no-repeat center center/cover;
+            position: absolute;
+            height: 70%;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        .h-primary {
+            font-size: 3.8rem;
+            padding: 12px;
+        }
+
+        #home h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        #home p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            padding: 6px 20px;
+            border: 2px solid white;
+            background-color: brown;
+            color: white;
+            margin: 17px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .h-secondary {
+            font-size: 2.3;
+            padding: 12px;
+        }
+
+        #services {
+            margin: 34px;
+            display: flex;
+            background-color: transparent;
+        }
+
+        .services-container {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img//berries-2986532.jpg') no-repeat center center/cover;
+
+            color: white;
+        }
+
+        #services .box {
+            padding: 34px;
+            margin: 3px 6px;
+            border-radius: 28px;
+            background-color: transparent;
+        }
+
+        #services .box img {
+            height: 160px;
+            display: block;
+            margin: auto;
+        }
+
+        #client-section {
+            height: 344px;
+            margin-top: 60px;
+            color: white;
+
+        }
+
+        #client-section::before {
+            content: "";
+            position: absolute;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1.5)), url('img/hamburger-1481025.jpg') no-repeat center center/cover;
+            width: 100%;
+            height: 45%;
+            z-index: -1;
+            /* opacity: 0.4; */
+        }
+
+        #clients {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clients img {
+            height: 140px;
+        }
+
+        .client-item {
+            padding: 14px;
+        }
+
+        #contact {
+            position: relative;
+            margin-top: 10px;
+            color: white;
+        }
+
+        #contact::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.88;
+            position: absolute;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/snack-2635035.jpg') no-repeat center center/cover;
+        }
+
+        #contact-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 34px;
+            color: white;
+        }
+
+        #contact-box input,
+        #contact-box textarea {
+            text-transform: uppercase;
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 9px;
+            font-size: 1.1rem;
+            background-color: transparent;
+            color: white;
+        }
+
+        #contact-box form {
+            width: 40%;
+        }
+
+        #contact-box label {
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 9px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="img/mcdonald-998495_1920.png" alt="">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Service</a></li>
+            <li class="item"><a href="#">About Us</a></li>
+            <li class="item"><a href="#Contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ad molestiae ab natus voluptates
+            expedita eius , voluptatum porro ipsa minima modi vero officia?</p>
+        <button class="btn">Order Now</button>
+    </section>
+    <section class="services-container">
+        <h1 class="h-primary center">
+            Our Services
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="img/pizza order.png" alt="">
+                <h2 class="h-secondary center">
+                    Food Cater
+                </h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe voluptatem aliquid
+                    inventore veniam
+                    quasi nam atque incidunt non natus similique
+                    culpa fuga dicta, tenetur nemo praesentium!</p>
+            </div>
+            <div class="box">
+                <img src="img/sandwich services.png" alt="">
+                <h2 class="h-secondary center">
+                    Bulk Order
+                </h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe voluptatem aliquid
+                    inventore veniam
+                    quasi nam atque incidunt non natus similique
+                    culpa fuga dicta, tenetur nemo praesentium!</p>
+            </div>
+            <div class="box">
+                <img src="img/delivery boy.png" alt="">
+                <h2 class="h-secondary center">
+                    Food Order
+                </h2>
+                <p class="center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe voluptatem aliquid
+                    inventore veniam
+                    quasi nam atque incidunt non natus similique
+                    culpa fuga dicta, tenetur nemo praesentium!</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="img/whatsapp-1844471.png" alt="">
+            </div>
+            <div class="client-item">
+                <a href="https://www.instagram.com/sohaib_hoon_yawwrr/"><img src="img/instagram-1834010.png" alt=""></a>
+            </div>
+            <div class="client-item">
+                <a href="https://www.facebook.com/sohaib.ikram.9461"><img src="img/facebook-1834007.png" alt=""></a>
+            </div>
+            <div class="client-item">
+                <a href="https://twitter.com/Sohaib_420_"><img src="img/twitter.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center"> <a name="Contact">Contact Us</a></h1>
+        <div id="contact-box">
+            <form action=""
+            autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Email:</label>
+                    <input type="text" name="name" id="email" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Phone Number:</label>
+                    <input type="text" name="name" id="Phone" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Give any comment"></textarea>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.MyOnlineMeal.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+
+</html>
