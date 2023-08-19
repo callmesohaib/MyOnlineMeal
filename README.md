@@ -1,2 +1,2 @@
 # MyOnlineMeal
-its my first project on the food restaurant!!!
+Its my first project on the food restaurant!!!
